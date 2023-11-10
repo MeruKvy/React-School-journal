@@ -8,13 +8,30 @@ function App() {
     {
       name: "Jhon",
       lastName: "whick",
-      grades: [[8, 10, 11, 29, 5], ["-", "-", "-", "5", 6], []],
+      grades: [
+        [
+          [8, 10, 11, 29, 5],
+          ["-", "4", "-", "5", 6],
+          ["4", "11", 10, "-", "-"],
+        ],
+        [
+          [10, "-", 11, 8, "-"],
+          [10, "-", 11, 8, "-"],
+          ["-", "-", "-", "-", "-"],
+        ],
+        [
+          [10, "-", 11, 8, "-"],
+          [10, "-", 11, 8, "-"],
+          ["-", "-", "-", "-", "-"],
+        ],
+      ],
       id: "011",
     },
   ]);
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [grade, setGrade] = useState("");
+  const [subjectIndex, setSubjectIndex] = useState(0);
+  const [weekIndex, setWeekIndex] = useState(0);
 
   const createStudent = () => {
     const id = uuidv4();
@@ -22,7 +39,23 @@ function App() {
     const student = {
       name: name,
       lastName: lastName,
-      grades: [[], [], []],
+      grades: [
+        [
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+        ],
+        [
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+        ],
+        [
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+        ],
+      ],
       id: id,
     };
 
@@ -36,17 +69,24 @@ function App() {
           <div>
             <p>Subjects</p>
             <div className="row">
-              <button>Georgian</button>
-              <button>Math</button>
-              <button>English</button>
+              <button
+                onClick={() => {
+                  setSubjectIndex[0]
+                  console.log(subjectIndex)
+                }}
+              >
+                Georgian
+              </button>
+              <button onClick={() => setSubjectIndex[1]}>Math</button>
+              <button onClick={() => setSubjectIndex[2]}>English</button>
             </div>
           </div>
           <div>
             <p>Firter</p>
             <div className="row">
-              <button>Week 1</button>
-              <button>Week 2</button>
-              <button>Week 3</button>
+              <button onClick={() => setWeekIndex[0]}>Week 1</button>
+              <button onClick={() => setWeekIndex[1]}>Week 2</button>
+              <button onClick={() => setWeekIndex[2]}>Week 3</button>
             </div>
           </div>
         </div>
@@ -56,7 +96,8 @@ function App() {
               name={student.name}
               lastName={student.lastName}
               grades={student.grades}
-              key={student.id}
+              subjectIndex={subjectIndex}
+              weekIndex={weekIndex}
             />
           ))}
         </div>

@@ -1,9 +1,19 @@
-import React from "react";
-import { useState } from "react";
+import { React, useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
-const Person = ({ name, lastName, grades, key, subject }) => {
-  const [edit, setEdit] = useState(false);
-  const [selectedScore, setSelectedScore] = useState("");
+const Person = ({ name, lastName, grades, subjectIndex, weekIndex }) => {
+  const [editingScoreIndex, setEditingScoreIndex] = useState(-1);
+  const [newScore, setNewScore] = useState(0);
+  const inputRef = useRef(null);
+
+  const handleUpdate = (score, index) => {
+    grades[subjectIndex][weekIndex][index] = score;
+  };
+
+  const focusInput = (index) => {
+    setEditingScoreIndex(index);
+    setTimeout(() => inputRef.current.focus(), 0);
+  };
+
   return (
     <div className="person-container">
       <div className="student-names">
@@ -11,14 +21,30 @@ const Person = ({ name, lastName, grades, key, subject }) => {
         <p className="plate">{lastName}</p>
       </div>
       <div className="student-grades">
-        {grades[0].map((grade) => (
+        {grades[subjectIndex][weekIndex].map((grade, index) => (
           <button
+            key={uuidv4()}
             onClick={() => {
-              setEdit(true);
+              setEditingScoreIndex(index);
+              focusInput(index);
             }}
             className="plate"
           >
-            {edit ? <input /> : grade}
+            {editingScoreIndex === index ? (
+              <input
+                onChange={(e) => setNewScore(e.target.value)}
+                type="text"
+                ref={inputRef}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleUpdate(newScore, index);
+                    setEditingScoreIndex(-1);
+                  }
+                }}
+              />
+            ) : (
+              grade
+            )}
           </button>
         ))}
       </div>
