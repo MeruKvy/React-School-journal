@@ -1,0 +1,67 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.App {
+  @apply flex justify-center;
+}
+
+.content-spacer {
+  @apply w-3/5 mt-36;
+}
+
+.sort-container,
+.student-container,
+.person-container {
+  @apply flex justify-between w-full;
+}
+
+.plate {
+  @apply w-[120px] flex justify-center items-center border-2 border-solid border-[black] h-[25px];
+}
+
+.student-names {
+  display: flex;
+}
+
+.student-container{
+  @apply mb-5 w-[100px] flex flex-wrap flex-col
+}
+
+.person-container {
+  &__student-grades {
+    &__input {
+      @apply w-6  border-2  focus:outline-none outline-none bg-transparent focus:ring-0 border-transparent;
+    }
+    @apply flex;
+  }
+}
+
+.btn {
+  @apply rounded border border-solid border-blue-800  px-10 py-1;
+  &__active {
+    @apply text-[white] bg-blue-800;
+  }
+  &__normal {
+    @apply text-blue-800;
+  }
+}
+
+form {
+  input {
+    @apply border-2 border-solid border-[black] rounded w-40 mb-1;
+  }
+  p {
+    @apply mb-2;
+  }
+  @apply flex flex-col w-48 items-center border-2  border-solid border-[black];
+  button {
+    @apply m-0 mb-2 mt-1;
+  }
+}
+
+.row {
+  button {
+    @apply mr-2 mb-10
+  }
+}

@@ -2,11 +2,12 @@ import { React, useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 const Person = ({ name, lastName, grades, subjectIndex, weekIndex }) => {
   const [editingScoreIndex, setEditingScoreIndex] = useState(-1);
-  const [newScore, setNewScore] = useState(0);
+  const [newScore, setNewScore] = useState("");
   const inputRef = useRef(null);
 
   const handleUpdate = (score, index) => {
     grades[subjectIndex][weekIndex][index] = score;
+    setNewScore("");
   };
 
   const focusInput = (index) => {
@@ -20,7 +21,7 @@ const Person = ({ name, lastName, grades, subjectIndex, weekIndex }) => {
         <p className="plate">{name}</p>
         <p className="plate">{lastName}</p>
       </div>
-      <div className="student-grades">
+      <div className="person-container__student-grades">
         {grades[subjectIndex][weekIndex].map((grade, index) => (
           <button
             key={uuidv4()}
@@ -33,13 +34,19 @@ const Person = ({ name, lastName, grades, subjectIndex, weekIndex }) => {
             {editingScoreIndex === index ? (
               <input
                 onChange={(e) => setNewScore(e.target.value)}
+                className="person-container__student-grades__input"
                 type="text"
                 ref={inputRef}
+                value={newScore}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     handleUpdate(newScore, index);
                     setEditingScoreIndex(-1);
                   }
+                }}
+                onBlur={() => {
+                  handleUpdate(newScore, index);
+                  setEditingScoreIndex(-1);
                 }}
               />
             ) : (

@@ -1,37 +1,21 @@
-import "./App.css";
+import "./App.scss";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Person from "./Person";
+import { exampleStudents } from "./Data";
+import { personGrades } from "./Data";
 
 function App() {
-  const [students, setStudents] = useState([
-    {
-      name: "Jhon",
-      lastName: "whick",
-      grades: [
-        [
-          [8, 10, 11, 29, 5],
-          ["-", "4", "-", "5", 6],
-          ["4", "11", 10, "-", "-"],
-        ],
-        [
-          [10, "-", 11, 8, "-"],
-          [10, "-", 11, 8, "-"],
-          ["-", "-", "-", "-", "-"],
-        ],
-        [
-          [10, "-", 11, 8, "-"],
-          [10, "-", 11, 8, "-"],
-          ["-", "-", "-", "-", "-"],
-        ],
-      ],
-      id: "011",
-    },
-  ]);
+  const [students, setStudents] = useState(exampleStudents);
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [subjectIndex, setSubjectIndex] = useState(0);
   const [weekIndex, setWeekIndex] = useState(0);
+  const [toggle, setToggle] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
 
   const createStudent = () => {
     const id = uuidv4();
@@ -39,54 +23,82 @@ function App() {
     const student = {
       name: name,
       lastName: lastName,
-      grades: [
-        [
-          ["-", "-", "-", "-", "-"],
-          ["-", "-", "-", "-", "-"],
-          ["-", "-", "-", "-", "-"],
-        ],
-        [
-          ["-", "-", "-", "-", "-"],
-          ["-", "-", "-", "-", "-"],
-          ["-", "-", "-", "-", "-"],
-        ],
-        [
-          ["-", "-", "-", "-", "-"],
-          ["-", "-", "-", "-", "-"],
-          ["-", "-", "-", "-", "-"],
-        ],
-      ],
+      grades: personGrades,
       id: id,
     };
 
-    setStudents(student.push(student));
+    setStudents([...students, student]);
+    setToggle(false)
+    setName("")
+    setLastName("")
   };
 
   return (
     <div className="App">
-      <div>
+      <div className="content-spacer">
         <div className="sort-container">
           <div>
             <p>Subjects</p>
             <div className="row">
               <button
+                className={
+                  subjectIndex === 0 ? "btn btn__active" : "btn btn__normal"
+                }
                 onClick={() => {
-                  setSubjectIndex[0]
-                  console.log(subjectIndex)
+                  setSubjectIndex(0);
                 }}
               >
                 Georgian
               </button>
-              <button onClick={() => setSubjectIndex[1]}>Math</button>
-              <button onClick={() => setSubjectIndex[2]}>English</button>
+              <button
+                className={
+                  subjectIndex === 1 ? "btn btn__active" : "btn btn__normal"
+                }
+                onClick={() => {
+                  setSubjectIndex(1);
+                }}
+              >
+                Math
+              </button>
+              <button
+                className={
+                  subjectIndex === 2 ? "btn btn__active" : "btn btn__normal"
+                }
+                onClick={() => {
+                  setSubjectIndex(2);
+                }}
+              >
+                English
+              </button>
             </div>
           </div>
           <div>
             <p>Firter</p>
             <div className="row">
-              <button onClick={() => setWeekIndex[0]}>Week 1</button>
-              <button onClick={() => setWeekIndex[1]}>Week 2</button>
-              <button onClick={() => setWeekIndex[2]}>Week 3</button>
+              <button
+                className={
+                  weekIndex === 0 ? "btn btn__active" : "btn btn__normal"
+                }
+                onClick={() => setWeekIndex(0)}
+              >
+                Week 1
+              </button>
+              <button
+                className={
+                  weekIndex === 1 ? "btn btn__active" : "btn btn__normal"
+                }
+                onClick={() => setWeekIndex(1)}
+              >
+                Week 2
+              </button>
+              <button
+                className={
+                  weekIndex === 2 ? "btn btn__active" : "btn btn__normal"
+                }
+                onClick={() => setWeekIndex(2)}
+              >
+                Week 3
+              </button>
             </div>
           </div>
         </div>
@@ -101,6 +113,23 @@ function App() {
             />
           ))}
         </div>
+        {toggle ? (
+          <form onSubmit={handleSubmit}>
+            <p>new student</p>
+            <input value={name} onChange={(e) => setName(e.target.value)} />
+            <input
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+            <button className="btn btn__active" onClick={() => createStudent()}>
+              Add student
+            </button>
+          </form>
+        ) : (
+          <button className="btn btn__active" onClick={() => setToggle(true)}>
+            Add New Student
+          </button>
+        )}
       </div>
     </div>
   );
