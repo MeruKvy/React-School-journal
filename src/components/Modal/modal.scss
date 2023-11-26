@@ -1,0 +1,20 @@
+.modal-wrapper {
+  @apply w-full h-full bg-black bg-[rgba(0,0,0,0.4)] absolute left-0 top-0;
+}
+
+form {
+  input {
+    @apply border-2 border-solid border-[black] rounded w-52 mb-1;
+  }
+  p {
+    @apply mb-2;
+  }
+  button {
+      @apply m-0 mb-2 mt-1;
+    }
+    @apply flex flex-col w-80 items-center border-2  border-solid border-[black] absolute -translate-x-2/4 -translate-y-3/4 left-2/4 top-2/4;
+}
+
+.app-display {
+  display: none;
+}

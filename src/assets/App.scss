@@ -1,0 +1,45 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.App {
+  @apply flex justify-center;
+}
+
+.content-spacer {
+  @apply w-3/5 mt-36;
+}
+
+.sort-container,
+.student-container,
+.person-container {
+  @apply flex justify-between w-full;
+}
+
+.plate {
+  @apply w-[120px] flex justify-center items-center border-2 border-solid border-[black] h-[25px];
+}
+
+.student-names {
+  display: flex;
+}
+
+.student-container{
+  @apply mb-5 w-[100px] flex flex-wrap flex-col
+}
+
+.btn {
+  @apply rounded border border-solid border-blue-800  px-10 py-1;
+  &__active {
+    @apply text-[white] bg-blue-800;
+  }
+  &__normal {
+    @apply text-blue-800;
+  }
+}
+
+.row {
+  button {
+    @apply mr-2 mb-10
+  }
+}
