@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
-import { personGrades } from "../../Data";
+import { personGrades } from "../../../Data";
 import { useMyContext } from "../../hooks/myContext";
 import { v4 as uuidv4 } from "uuid";
 import "./modal.scss";

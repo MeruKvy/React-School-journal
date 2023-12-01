@@ -1,3 +1,9 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
 .modal-wrapper {
   @apply w-full h-full bg-black bg-[rgba(0,0,0,0.4)] absolute left-0 top-0;
 }

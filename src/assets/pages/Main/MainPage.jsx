@@ -1,18 +1,18 @@
-import "./App.scss";
+import React from "react";
 import { useState } from "react";
-import Person from "../components/Person/Person";
-import { Modal } from "../components/Modal/Modal";
-import { useMyContext } from "../hooks/myContext";
-import { exampleStudents } from "../Data";
+import Person from "../../components/Person/Person";
+import { Modal } from "../../components/Modal/Modal";
+import { useMyContext } from "../../hooks/myContext";
+import "./mainPage.scss"
 
-function App() {
-  const { students, setStudents } = useMyContext(); //USECONTEXTS VER AMOUGAMEBVS DEFAULT VALUE AR KIEWODEBA
+const MainPage = () => {
+  const { students, setStudents } = useMyContext();
   const [subjectIndex, setSubjectIndex] = useState(0);
   const [weekIndex, setWeekIndex] = useState(0);
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="App">
+    <div className="Main" >
       <Modal Visible={toggle} onClose={() => setToggle(false)} />
       <div className="content-spacer">
         <div className="sort-container">
@@ -87,6 +87,7 @@ function App() {
               name={student.name}
               lastName={student.lastName}
               grades={student.grades}
+              id={student.id}
               subjectIndex={subjectIndex}
               weekIndex={weekIndex}
             />
@@ -102,6 +103,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
-export default App;
+export default MainPage;

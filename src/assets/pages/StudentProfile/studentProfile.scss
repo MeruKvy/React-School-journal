@@ -1,0 +1,15 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.studentProfile {
+    &__person__name {
+        @apply text-5xl
+    }
+    &__person__grades__week {
+        @apply border-2 border-solid border-black rounded mb-1
+    }
+    @apply flex justify-center items-center h-80
+
+}

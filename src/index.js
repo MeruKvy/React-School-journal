@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./main.scss";
-import App from "./assets/App";
-import { Modal } from "./components";
+import App from "./App";
+import { Modal } from "./assets/components";
 import { BrowserRouter } from "react-router-dom";
-import { MyContextProvider } from "./hooks/myContext";
+import { MyContextProvider } from "./assets/hooks/myContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
