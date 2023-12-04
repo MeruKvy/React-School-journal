@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+
 import "./studentProfile.scss";
 import { useParams } from "react-router";
 import { useMyContext } from "../../hooks/myContext";
-import   subjectGrades  from "../../components/subjectGrades/subjectGrades"
-
+import { Grades } from "../../components";
 const StudentProfile = () => {
   const { id } = useParams();
   const { students, setStudents } = useMyContext();
   const [chosenStudent, setChosenStudent] = useState({
     name: "Couldn't find chosen student. ;/",
   });
+  
+
 
   const getStudent = (identifier) => {
     const filteredStudent = students.filter(
@@ -34,18 +35,18 @@ const StudentProfile = () => {
           {chosenStudent.grades?.map((week, index) => (
             <div className="studentProfile__person__grades__week">
               <h1>Week {index + 1}</h1>
-              <subjectGrades
-                subject={"georgian"}
+              <Grades
+                subject={"Georgian"}
                 index={0}
                 week={chosenStudent.grades[index]}
               />
-              <subjectGrades
-                subject={"math"}
+              <Grades
+                subject={"Math"}
                 index={1}
                 week={chosenStudent.grades[index]}
               />
-              <subjectGrades
-                subject={"english"}
+              <Grades
+                subject={"English"}
                 index={2}
                 week={chosenStudent.grades[index]}
               />
