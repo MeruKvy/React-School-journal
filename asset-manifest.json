@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/React-School-journal/static/css/main.533db741.css",
+    "main.css": "/React-School-journal/static/css/main.eeefd55a.css",
     "main.js": "/React-School-journal/static/js/main.2036d13b.js",
     "index.html": "/React-School-journal/index.html",
-    "main.533db741.css.map": "/React-School-journal/static/css/main.533db741.css.map",
+    "main.eeefd55a.css.map": "/React-School-journal/static/css/main.eeefd55a.css.map",
     "main.2036d13b.js.map": "/React-School-journal/static/js/main.2036d13b.js.map"
   },
   "entrypoints": [
-    "static/css/main.533db741.css",
+    "static/css/main.eeefd55a.css",
     "static/js/main.2036d13b.js"
   ]
 }
