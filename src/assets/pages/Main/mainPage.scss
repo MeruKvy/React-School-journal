@@ -4,52 +4,44 @@
 
 .Main {
   @apply flex justify-center;
-  box-sizing: border-box;
+
 }
 
 .content-spacer {
   @apply w-3/5 mt-36;
-  box-sizing: border-box;
 }
 
 .sort-container,
 .student-container,
 .person-container {
   @apply flex justify-between w-full;
-  box-sizing: border-box;
 }
 
 .plate {
   @apply w-[120px] h-[25px] flex justify-center items-center border-2 border-solid border-[black];
-  box-sizing: border-box;
 
 }
 
 .student-names {
   @apply flex
-  
 }
 
 .student-container{
   @apply mb-5 w-[100px] flex flex-wrap flex-col;
-  box-sizing: border-box;
 }
 
 .btn {
   @apply rounded border border-solid border-blue-800  px-10 py-1;
   &__active {
     @apply text-[white] bg-blue-800;
-    box-sizing: border-box;
   }
   &__normal {
     @apply text-blue-800;
-    box-sizing: border-box;
   }
 }
 
 .row {
   button {
     @apply mr-2 mb-10;
-    box-sizing: border-box;
   }
 }
