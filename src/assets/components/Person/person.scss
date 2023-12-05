@@ -5,15 +5,15 @@
 .person-container {
   &__student-grades {
     &__input {
-      @apply w-6 border-2 focus:outline-none outline-none bg-transparent focus:ring-0 border-transparent;
-
+      @apply w-6 bg-transparent border-2 border-transparent focus:outline-none outline-none focus:ring-0;
+      box-sizing: border-box
     }
     @apply flex;
-
+    box-sizing: border-box;
   }
 }
 
 .link:hover {
-  @apply text-[white] bg-blue-800  border border-solid border-[gray];
-
+  @apply border bg-blue-800 text-[white] border-solid border-[gray];
+  box-sizing: border-box;
 }
