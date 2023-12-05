@@ -3,45 +3,64 @@
 @import "tailwindcss/utilities";
 
 .Main {
-  @apply flex justify-center;
-
+  display: flex;
+  justify-content: center;
 }
 
 .content-spacer {
-  @apply w-3/5 mt-36;
+  width: 60%;
+  margin-top: 9rem;
 }
 
 .sort-container,
 .student-container,
 .person-container {
-  @apply flex justify-between w-full;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .plate {
-  @apply w-[120px] h-[25px] flex justify-center items-center border-2 border-solid border-[black];
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 2px;
+  border-style: solid;
+  width: 120px;
+  height: 25px;
+  border-color: black;
 }
 
 .student-names {
-  @apply flex
+  display: flex;
 }
 
-.student-container{
-  @apply mb-5 w-[100px] flex flex-wrap flex-col;
+.student-container {
+  display: flex;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  width: 100px;
 }
 
 .btn {
-  @apply rounded border border-solid border-blue-800  px-10 py-1;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  border-color: #1e40af;
+  border-style: solid;
   &__active {
-    @apply text-[white] bg-blue-800;
+    color: white;
+    background-color: #1e40af;
   }
   &__normal {
-    @apply text-blue-800;
+    color: #1e40af;
   }
 }
 
 .row {
   button {
-    @apply mr-2 mb-10;
+    margin-right: 0.5rem;
+    margin-bottom: 2.5rem;
   }
 }

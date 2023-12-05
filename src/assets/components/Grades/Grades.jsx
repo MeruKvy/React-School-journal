@@ -1,21 +1,19 @@
 import React from "react";
-import "./test.scss";
-import { useRef } from "react";
-import { v4 as uuidv4 } from "uuid"; 
+import { v4 as uuidv4 } from "uuid";
 
 const Grades = ({ subject, index, week }) => {
   
-  const inputRef = useRef(null);
-
 
   return (
     <div>
-      <div className="Student__subject">
+      <div className="flex justify-center mt-4">
         <p>{subject}</p>
       </div>
       <div>
         {week[index].map((grade) => (
-          <button key={uuidv4()} className="plate">{grade}</button>
+          <button key={uuidv4()} className="plate">
+            {grade}
+          </button>
         ))}
       </div>
     </div>

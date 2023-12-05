@@ -6,7 +6,7 @@ import { useMyContext } from "../../hooks/myContext";
 import "./mainPage.scss"
 
 const MainPage = () => {
-  const { students, setStudents } = useMyContext();
+  const { students } = useMyContext();
   const [subjectIndex, setSubjectIndex] = useState(0);
   const [weekIndex, setWeekIndex] = useState(0);
   const [toggle, setToggle] = useState(false);
