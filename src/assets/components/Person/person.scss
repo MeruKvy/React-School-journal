@@ -6,14 +6,14 @@
   &__student-grades {
     &__input {
       @apply w-6 border-2 focus:outline-none outline-none bg-transparent focus:ring-0 border-transparent;
-      foo: bar;
+
     }
     @apply flex;
-    foo: bar;
+
   }
 }
 
 .link:hover {
   @apply text-[white] bg-blue-800  border border-solid border-[gray];
-  foo: bar;
+
 }

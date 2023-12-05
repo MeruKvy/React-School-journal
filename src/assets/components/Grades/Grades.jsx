@@ -1,7 +1,7 @@
 import React from "react";
 import "./test.scss";
 import { useRef } from "react";
-import { v4 as uuidv4 } from "uuid"; /// mgoni konteqstshi unda shevinaxot braci
+import { v4 as uuidv4 } from "uuid"; 
 
 const Grades = ({ subject, index, week }) => {
   

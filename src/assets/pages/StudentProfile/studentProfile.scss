@@ -1,18 +1,13 @@
-
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .studentProfile {
-    &__person__name {
-        @apply text-5xl border border-2 border-black rounded w-fit;
-        foo: bar;
-    }
-    &__person__grades__week {
-        @apply border-2 border-solid border-black rounded mb-1 flex ;
-        foo: bar;
-    }
-    @apply flex justify-center items-center h-[100vh];
-    foo: bar;
-
+  &__person__name {
+    @apply text-5xl border border-2 border-black rounded w-fit;
+  }
+  &__person__grades__week {
+    @apply border-2 border-solid border-black rounded mb-1 flex;
+  }
+  @apply flex justify-center items-center h-[100vh];
 }
