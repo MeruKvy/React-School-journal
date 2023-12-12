@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
-import { personGrades } from "../../../Data";
 import { useMyContext } from "../../hooks/myContext";
 import { v4 as uuidv4 } from "uuid";
 import "./modal.scss";
@@ -31,7 +30,23 @@ export function Modal({ Visible, onClose }) {
     const student = {
       name: name,
       lastName: lastName,
-      grades: personGrades,
+      grades: [
+        [
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+        ],
+        [
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+        ],
+        [
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+          ["-", "-", "-", "-", "-"],
+        ],
+      ],
       id: id,
     };
 

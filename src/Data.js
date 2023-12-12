@@ -15,6 +15,9 @@ export const personGrades = [
     ["-", "-", "-", "-", "-"],
   ],
 ];
+
+
+
 export const exampleStudents = [
   {
     name: "Jhon",

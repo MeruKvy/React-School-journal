@@ -24,7 +24,7 @@ const StudentProfile = () => {
   return (
     <div className="flex justify-center items-center h-[100vh]">
       <div className="studentProfile__person">
-        <h1 className="text-5xl border border-2 border-black rounded w-fit">
+        <h1 className="text-5xl  border-2 border-black rounded w-fit">
           {chosenStudent.name} {chosenStudent.lastName}{" "}
         </h1>
         <div className="studentProfile__person__grades">
