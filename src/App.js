@@ -7,7 +7,7 @@ function App() {
   return (
     <React.Fragment>
       <Routes>
-
+        <Route path="/" element={<Main />} />
         <Route path="/:id" element={<StudentProfile />} />
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
